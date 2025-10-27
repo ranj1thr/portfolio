@@ -6,6 +6,7 @@ import { Experience } from './components/Experience';
 import { Contact } from './components/Contact';
 import { Footer } from './components/Footer';
 import { ScrollToTop } from './components/ScrollToTop';
+import { Storkstone }  from './components/Storkstone';
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
         <About />
         <Projects />
         <Experience />
+        <Storkstone />
         <Contact />
       </main>
       <Footer />

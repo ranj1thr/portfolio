@@ -1,4 +1,4 @@
-import { ArrowDown, Github, Linkedin, Mail, Twitter } from 'lucide-react';
+import { ArrowDown, Github, Linkedin, Mail, X, } from 'lucide-react';
 
 export function Hero() {
   const scrollToSection = (sectionId: string) => {
@@ -82,7 +82,7 @@ export function Hero() {
               className="p-3 bg-white/10 hover:bg-white/20 backdrop-blur-sm rounded-full transition-all duration-200 hover:scale-110"
               aria-label="Twitter"
             >
-              <Twitter size={24} />
+              <X size={24} />
             </a>
             <a
               href="mailto:ranjithtweaks@gmail.com"
