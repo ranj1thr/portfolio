@@ -1,5 +1,5 @@
 import { useState, useRef } from 'react';
-import { Send, Mail, Github, Linkedin, Twitter, MapPin, CheckCircle } from 'lucide-react';
+import { Send, Mail, Github, Linkedin, X, MapPin, CheckCircle } from 'lucide-react';
 import { supabase, type ContactSubmission } from '../lib/supabase';
 import { useIntersectionObserver } from '../hooks/useIntersectionObserver';
 
@@ -153,9 +153,9 @@ export function Contact() {
                     target="_blank"
                     rel="noopener noreferrer"
                     className="p-3 bg-slate-100 hover:bg-blue-600 text-slate-700 hover:text-white rounded-lg transition-all duration-200 hover:scale-110"
-                    aria-label="Twitter"
+                    aria-label="X (Twitter)"
                   >
-                    <Twitter size={24} />
+                    <X size={24} />
                   </a>
                 </div>
               </div>
