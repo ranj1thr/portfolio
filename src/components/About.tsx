@@ -49,7 +49,7 @@ export function About() {
                   where I build analytics workflows, automate reporting, and design data pipelines that improve operational efficiency.
                 </p>
                 <p>
-                  Alongside my professional role, I'm also the Co-founder & Tech Lead at STORKSTONE, a D2C brand crafting minimalist silver jewelry and scented candles.
+                  Alongside my professional role, I'm also the Founder & Tech Lead at STORKSTONE, a D2C brand crafting minimalist silver jewelry and scented candles.
                   At STORKSTONE, I lead both technology and creative direction - building the automations, dashboards, and digital systems that power the brand from the inside out.
                 </p>
                 <p>
