@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import { useNavigate, useLocation } from 'react-router-dom';
 import { Menu, X } from 'lucide-react';
 import { useScrollSpy } from '../hooks/useScrollSpy';
 
@@ -15,6 +16,8 @@ export function Navigation() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const activeSection = useScrollSpy(navItems.map(item => item.id), 150);
+  const navigate = useNavigate();
+  const location = useLocation();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -26,15 +29,36 @@ export function Navigation() {
   }, []);
 
   const scrollToSection = (sectionId: string) => {
-    const element = document.getElementById(sectionId);
-    if (element) {
-      const offset = 80;
-      const elementPosition = element.offsetTop - offset;
-      window.scrollTo({
-        top: elementPosition,
-        behavior: 'smooth',
-      });
+    // If Storkstone is a separate page, navigate to that route
+    if (sectionId === 'storkstone') {
+      // If already on storkstone route, scroll to id if present
+      if (location.pathname === '/storkstone') {
+        const el = document.getElementById(sectionId);
+        if (el) el.scrollIntoView({ behavior: 'smooth' });
+      } else {
+        navigate('/storkstone');
+      }
       setIsMobileMenuOpen(false);
+      return;
+    }
+
+    // For other sections: if not on home, navigate home first then scroll
+    const doScroll = () => {
+      const element = document.getElementById(sectionId);
+      if (element) {
+        const offset = 80;
+        const elementPosition = element.offsetTop - offset;
+        window.scrollTo({ top: elementPosition, behavior: 'smooth' });
+      }
+      setIsMobileMenuOpen(false);
+    };
+
+    if (location.pathname !== '/') {
+      navigate('/');
+      // small delay to allow DOM to mount
+      setTimeout(doScroll, 120);
+    } else {
+      doScroll();
     }
   };
 
