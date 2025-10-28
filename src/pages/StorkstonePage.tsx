@@ -10,8 +10,8 @@ export default function StorkstonePage() {
     const title = 'STORKSTONE — Jewelry & Candles | Storkstone';
     const descriptionContent =
       'STORKSTONE — 925 silver minimalist jewelry and premium scented candles. Visit our brand page.';
-    const canonicalUrl = 'https://storkstone.com';
-  const ogImage = 'https://cdn.shopify.com/s/files/1/0753/9205/7579/files/Group_239.png?v=1761650530';
+    const canonicalUrl = 'https://ranjithr.dev/storkstone';
+    const ogImage = 'https://cdn.shopify.com/s/files/1/0753/9205/7579/files/Group_239.png?v=1761650530';
 
     document.title = title;
 
