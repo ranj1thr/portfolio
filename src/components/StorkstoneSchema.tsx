@@ -1,5 +1,4 @@
-import React from "react";
-
+// src/components/StorkstoneSchema.tsx
 export default function StorkstoneSchema() {
   const jsonLd = {
     "@context": "https://schema.org",

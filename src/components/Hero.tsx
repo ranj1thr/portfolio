@@ -31,7 +31,7 @@ export function Hero() {
             Hi, I'm <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-400">Ranjith R.</span>
           </h1>
           <p className="text-xl sm:text-2xl md:text-3xl text-blue-100 mb-8 font-light">
-            Co-founder & Tech Lead at STORKSTONE | Automation Engineer & Data Systems Specialist
+            Founder & Tech Lead at STORKSTONE | Automation Engineer & Data Systems Specialist
           </p>
           <p className="text-lg sm:text-xl text-slate-300 mb-12 max-w-3xl mx-auto leading-relaxed">
             I love building things that run by themselves - automation workflows, data pipelines, and clean backend systems that make daily operations effortless.
@@ -58,7 +58,7 @@ export function Hero() {
 
           <div className="flex justify-center gap-6">
             <a
-              href="https://www.linkedin.com/in/ranj1thr/"
+              href="https://github.com/ranj1thr"
               target="_blank"
               rel="noopener noreferrer"
               className="p-3 bg-white/10 hover:bg-white/20 backdrop-blur-sm rounded-full transition-all duration-200 hover:scale-110"
