@@ -22,12 +22,16 @@ export function Navigation() {
 
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 50);
+      // Keep nav visible if page is not the home route, even when at top (scrollY === 0).
+      setIsScrolled(window.scrollY > 50 || location.pathname !== '/');
     };
+
+    // Initialize scrolled state on mount.
+    handleScroll();
 
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
+  }, [location.pathname]);
 
   const scrollToSection = (sectionId: string) => {
     // If Blog is a separate page, navigate to that route
@@ -73,7 +77,7 @@ export function Navigation() {
     <nav
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         isScrolled
-          ? 'bg-white/90 backdrop-blur-md shadow-md'
+          ? 'bg-white/90 backdrop-blur-md'
           : 'bg-transparent'
       }`}
     >

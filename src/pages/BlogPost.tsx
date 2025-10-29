@@ -1,209 +1,86 @@
 // src/pages/BlogPost.tsx
-import React, { useEffect } from "react";
-import { Navigation } from "../components/Navigation";
-import { Footer } from "../components/Footer";
-import { ScrollToTop } from "../components/ScrollToTop";
+import { Navigation } from '../components/Navigation';
+import { Footer } from '../components/Footer';
 
-export default function BlogPost(): JSX.Element {
-  useEffect(() => {
-    const title = "The Story Behind STORKSTONE: Crafting Minimal Luxury for Everyday Wear";
-    const description =
-      "Discover how STORKSTONE was founded by Ranjith and Ammar — a D2C brand redefining 92.5 sterling silver jewelry and premium scented candles with minimalist luxury and technology.";
-    const canonicalUrl = "https://ranjithr.dev/blog/the-story-behind-storkstone";
-
-    document.title = title;
-
-    const upsertMeta = (
-      attrs: { name?: string; property?: string },
-      content: string
-    ) => {
-      const selector = attrs.name
-        ? `meta[name="${attrs.name}"]`
-        : `meta[property="${attrs.property}"]`;
-      let meta = document.head.querySelector(selector) as HTMLMetaElement | null;
-
-      if (!meta) {
-        meta = document.createElement("meta");
-        if (attrs.name) meta.name = attrs.name;
-        if (attrs.property) meta.setAttribute("property", attrs.property);
-        meta.content = content;
-        document.head.appendChild(meta);
-      } else {
-        meta.content = content;
-      }
-    };
-
-    upsertMeta({ name: "description" }, description);
-    upsertMeta({ name: "title" }, title);
-    upsertMeta({ name: "robots" }, "index,follow");
-
-    // canonical link
-    let canonical = document.querySelector("link[rel='canonical']") as HTMLLinkElement | null;
-    if (!canonical) {
-      canonical = document.createElement("link");
-      canonical.rel = "canonical";
-      canonical.href = canonicalUrl;
-      document.head.appendChild(canonical);
-    } else {
-      canonical.href = canonicalUrl;
-    }
-
-    // JSON-LD schema
-    const ld = {
-      "@context": "https://schema.org",
-      "@type": "BlogPosting",
-      headline: title,
-      author: {
-        "@type": "Person",
-        name: "Ranjith R",
-        url: "https://ranjithr.dev/",
-      },
-      publisher: {
-        "@type": "Organization",
-        name: "Sourcebit Innovations Pvt Ltd",
-        logo: "https://ranjithr.dev/favicon.ico",
-      },
-      datePublished: "2025-10-29",
-      mainEntityOfPage: canonicalUrl,
-      description,
-      image: "https://ranjithr.dev/assets/images/storkstone-feature.jpg",
-    };
-
-    let script = document.getElementById("blog-json-ld") as HTMLScriptElement | null;
-    if (!script) {
-      script = document.createElement("script");
-      script.id = "blog-json-ld";
-      script.type = "application/ld+json";
-      script.text = JSON.stringify(ld);
-      document.head.appendChild(script);
-    } else {
-      script.text = JSON.stringify(ld);
-    }
-  }, []);
-
+export default function BlogPost() {
   return (
-    <div className="min-h-screen">
+    <div className="bg-background-light dark:bg-background-dark font-display text-text-light dark:text-text-dark min-h-screen flex flex-col">
+      {/* Use site Navigation component (fixed) */}
       <Navigation />
 
-      <main className="py-24 px-4">
-        <section className="max-w-3xl mx-auto text-center px-4">
-          <h1 className="text-4xl md:text-5xl font-bold">
-            The Story Behind STORKSTONE
-          </h1>
-          <p className="mt-4 text-lg text-gray-600">
-            Crafting Minimal Luxury for Everyday Wear
-          </p>
-          <p className="mt-3 text-sm text-gray-500">
-            by Ranjith R · October 2025 · 5 min read
-          </p>
-        </section>
-
-        <section className="mt-12">
-          <img
-            src="/assets/images/storkstone-feature.jpg"
-            alt="STORKSTONE minimalist 92.5 sterling silver jewelry and candles"
-            className="w-full h-auto object-cover max-h-[520px]"
+      <div className="max-w-[960px] w-full mx-auto flex-1 px-4 sm:px-6 py-8 sm:py-16 pt-24">{/* pt-24 to offset fixed nav */}
+        <main>
+          <div
+            className="w-full bg-center bg-no-repeat bg-cover flex flex-col justify-end overflow-hidden rounded-xl min-h-80 md:min-h-96"
+            style={{
+              backgroundImage:
+                'url("https://lh3.googleusercontent.com/aida-public/AB6AXuDN3yWckrkJlkqKfq0YnSW3uwPRpQucssYGaIjFECi89ydgq3_zeXfLJkXl4nlZcnYapAlG4tkrsKvVov8PlLf9C1I5PII-k8mKDZ_m4KrKL1ks_Q-yFZNKWUfw8XedUSCu8wogDEGQfBdqqZ563UqxDuTzpG94WAe3cp1kYavgO_gHt172aorczVviDOf5nI6-FgNrHbaYMOghxCAmwB0XnFNyh2_qWu4jC0vepOwogA2oFcb-WVovK4Ccqve-DQXT8WXCOil9jv4")',
+            }}
+            aria-hidden
           />
-        </section>
 
-        <article className="prose prose-lg max-w-[720px] mx-auto mt-12 text-gray-700 leading-[1.8] px-4">
-          <h2 className="font-serif text-2xl">The Beginning</h2>
-          <p>
-            Every brand has a spark. For us, it began with a quiet realization that luxury doesn’t have to be loud. It can be subtle, personal, and designed for everyday life.
-          </p>
+          <div className="max-w-3xl mx-auto">
+            <h1 className="tracking-tight text-3xl sm:text-4xl lg:text-5xl font-bold leading-tight text-center pb-3 pt-10 sm:pt-12">The Story Behind STORKSTONE</h1>
+            <p className="text-text-light/70 dark:text-text-dark/70 text-sm font-normal leading-normal text-center pb-8 sm:pb-12">By STORKSTONE Team • May 20, 2024 • 5 min read</p>
 
-          <p>
-            STORKSTONE was born out of that belief. A vision shared between two co-founders, Ranjith R and Ammar, each bringing complementary strengths to one simple purpose: to make refined 92.5 sterling silver jewelry and premium scented candles accessible without losing their soul.
-          </p>
+            <article className="space-y-6 text-base sm:text-lg font-normal leading-relaxed sm:leading-loose">
+              <p>
+                Welcome to the world of STORKSTONE, where minimalism and quality are not just design principles, but a philosophy we live by. Our journey began with a simple idea: to create timeless pieces that bring a sense of quiet luxury into everyday life. This is the story of how that idea came to be.
+              </p>
 
-          <p>
-            Early seed support came from investor Jayanthi Lal, whose belief in the idea helped turn the concept into a launch-ready brand.
-          </p>
+              <p>
+                The name "STORKSTONE" is a fusion of two elements close to our heart. The "Stork" symbolizes new beginnings, craftsmanship, and deliberate care—qualities we pour into every piece. "Stone" represents the raw, natural materials we use, from the purest 92.5 sterling silver to the natural waxes in our candles. Together, they signify our commitment to creating enduring objects of beauty and purpose.
+              </p>
 
-          <h2 className="font-serif text-2xl">The Idea of Everyday Luxury</h2>
-          <p>
-            In a world where trends change every week, we wanted to slow down. To create something lasting, pieces that you’d reach for every day, not because they’re trendy, but because they feel right.
-          </p>
+              <div
+                className="w-full bg-center bg-no-repeat bg-cover flex flex-col justify-end overflow-hidden rounded-xl min-h-72 my-10"
+                style={{
+                  backgroundImage:
+                    'url("https://lh3.googleusercontent.com/aida-public/AB6AXuBJ7v3C1MOJ_fsxdr5wHqPmf6eCj5Y5AqlIUdmZcyc43sQ_s0cpIXRGkTsx_IzSCSehHSexSR1pO6yCwh8gJm_bJUHXRNeHWv8wfCK471ltTARoXtQDzxHXA02lczuugJJ4YtVeI1gk-1skC2JFZhrXNWQpEbEKJk7KgKnM3rhWeCJRD2b_lTIsw9twwDP_h6arAJw5YFhaob4JGtePFs2eRNdz79MVhZ82BSjfVQ4RQT1ptujRwSlE9elTxX4-95JUIk-Ucfv2DlA")',
+                }}
+                aria-hidden
+              />
 
-          <p>
-            Our products are designed around one principle: luxury that blends into life. Every STORKSTONE design begins with balance, between modern and classic, between affordability and artistry.
-          </p>
+              <p>
+                Our quest for quality begins with sourcing. We meticulously select our materials, partnering with artisans and suppliers who share our dedication to ethical practices and exceptional standards. The silver is refined for its unique luster and durability, while our candle scents are developed from premium essential oils to create subtle, evocative atmospheres.
+              </p>
 
-          <p>
-            We believe that a ring, a pendant, or even a candle on your desk can hold meaning when designed with intention.
-          </p>
+              <blockquote className="border-l-4 border-primary bg-primary/10 dark:bg-primary/20 p-6 my-10 rounded-r-lg">
+                <p className="text-xl italic text-text-light dark:text-text-dark leading-relaxed">"We believe that true luxury lies not in extravagance, but in the quiet confidence of a perfectly crafted piece."</p>
+              </blockquote>
 
-          <h2 className="font-serif text-2xl">Why 92.5 Sterling Silver</h2>
-          <p>
-            We chose 92.5 sterling silver not by chance, but by conviction. It’s durable, elegant, and timeless, just like the people who wear it.
-          </p>
+              <p>
+                Every STORKSTONE product is a testament to thoughtful design and skilled craftsmanship. From the initial sketch to the final polish, each step is performed with precision and passion. We embrace a minimalist aesthetic, allowing the inherent beauty of the materials to shine. Our vision for the future is to continue exploring the intersection of art and daily life, creating pieces that you'll cherish for years to come.
+              </p>
+            </article>
 
-          <p>
-            Each piece is 92.5 stamped and designed to stay with you through seasons, stories, and everyday moments.
-          </p>
+            <div className="text-center mt-16 py-12 bg-secondary-light dark:bg-secondary-dark rounded-xl">
+              <h2 className="text-2xl sm:text-3xl font-bold mb-4">Experience Timeless Elegance</h2>
+              <p className="text-text-light/80 dark:text-text-dark/80 mb-8 max-w-md mx-auto px-4">Discover minimalist jewelry and premium scented candles designed for the modern connoisseur.</p>
+              <a className="inline-block px-10 py-3 rounded-lg bg-primary text-white text-base font-bold tracking-wide hover:opacity-90 transition-opacity" href="#">Shop The Collection</a>
+            </div>
 
-          <p>
-            At STORKSTONE, silver isn’t just a material. It’s a medium of expression. Our jewelry represents individuality, confidence, and subtle luxury that never tries too hard.
-          </p>
-
-          <h2 className="font-serif text-2xl">Candles that Complement the Experience</h2>
-          <p>
-            Candles have always been more than just decor. They set the mood, define spaces, and bring calm to everyday routines.
-          </p>
-
-          <p>
-            Our premium scented candles were created to complement our jewelry line, adding balance to our aesthetic. They reflect the same values we stand for: minimalist design, soft detail, and a sensory experience that feels personal.
-          </p>
-
-          <p>
-            Each fragrance is carefully developed to evoke emotion, comfort, and style, a reflection of the modern home and its understated charm.
-          </p>
-
-          <h2 className="font-serif text-2xl">Technology Meets Craftsmanship</h2>
-          <p>Behind every product lies precision and process.</p>
-
-          <p>
-            As part of Sourcebit Innovations Pvt Ltd, STORKSTONE is powered by technology, automation, data, and structured systems that ensure consistent quality and smooth operations.
-          </p>
-
-          <p>
-            We believe creativity thrives on structure, and technology enables craftsmanship to scale beautifully.
-          </p>
-
-          <h2 className="font-serif text-2xl">Our Promise</h2>
-          <p>
-            We don’t chase trends. We build products that stay relevant, not because of seasons, but because of the feeling they evoke.
-          </p>
-
-          <p>
-            Luxury should be personal. And that’s what STORKSTONE stands for — minimal, meaningful, and made to last.
-          </p>
-
-          <h2 className="font-serif text-2xl">Closing Note</h2>
-          <p>
-            At STORKSTONE, we don’t just sell jewelry or candles. We create experiences that reflect a lifestyle of quiet confidence.
-          </p>
-
-          <p>This is our story, and it’s only just beginning.</p>
-
-          <hr className="my-8 border-gray-200" />
-
-          <div className="text-center">
-            <p className="mb-4 text-lg">✨ Explore our world at storkstone.com</p>
-            <a
-              href="https://storkstone.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-block bg-[#693B62] text-white px-6 py-3 rounded-lg shadow hover:shadow-lg transition-shadow"
-            >
-              Visit STORKSTONE Website
-            </a>
+            <div className="flex items-center justify-center gap-4 mt-16 pt-8 border-t border-secondary-light dark:border-secondary-dark">
+              <p className="text-sm font-medium text-text-light/70 dark:text-text-dark/70">Share this story:</p>
+              <div className="flex items-center gap-4">
+                <a className="text-text-light/60 dark:text-text-dark/60 hover:text-primary transition-colors" href="#" aria-label="Share Facebook">
+                  <svg className="size-6" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2C6.48 2 2 6.48 2 12c0 4.84 3.44 8.87 8 9.8V15H8v-3h2V9.5C10 7.57 11.57 6 13.5 6H16v3h-2c-.55 0-1 .45-1 1v2h3v3h-3v6.95c5.05-.5 9-4.76 9-9.95C22 6.48 17.52 2 12 2z"/></svg>
+                </a>
+                <a className="text-text-light/60 dark:text-text-dark/60 hover:text-primary transition-colors" href="#" aria-label="Share Instagram">
+                  <svg className="size-6" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2.04c-5.5 0-10 4.49-10 10.02 0 5.51 4.5 10 10 10 5.5 0 10-4.49 10-10S17.5 2.04 12 2.04zm4.24 15.42c-2.43 2.62-5.93 2.44-8.13.52-2.19-1.92-2.38-5.42.5-8.12 2.88-2.7 7.26-2.07 9.07 1.05-1.05.5-2.28.23-3.1-.72-.94-1.08-1.04-2.68.12-3.65.92-.76 2.15-.75 3.08-.12-1.2.1-2.29-.12-3.11-1.04-.57-.65-1.29-1.32-2.08-1.63-2.14-.84-4.78.3-6.26 2.1-2.04 2.5-2.08 6.07.03 8.6 2.11 2.53 5.82 3.1 8.44.82-1.02.5-2.17.61-3.23.44z"/></svg>
+                </a>
+                <a className="text-text-light/60 dark:text-text-dark/60 hover:text-primary transition-colors" href="#" aria-label="Share Twitter">
+                  <svg className="size-6" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M22 6c-1.5.6-3 1-4.6 1.2.6-1.5 1.5-2.6 1.8-4.2-1.3.8-2.7 1.3-4.2 1.6C14 3.3 12.3 2 10.4 2c-3.5 0-6.3 2.8-6.3 6.3 0 .5.1.9.2 1.4-5.2-.3-9.8-2.8-12.9-6.5-.5.9-1 2-1 3.2 0 2.2 1.1 4.1 2.8 5.2-.9 0-1.9-.3-2.7-.8v.1c0 3 2.2 5.6 5.1 6.2-.5.1-1.1.2-1.7.2-.4 0-.8 0-1.2-.1.8 2.5 3.1 4.3 5.9 4.3-2.2 1.7-4.9 2.7-7.9 2.7-.5 0-1 0-1.5-.1 2.8 1.8 6.1 2.8 9.7 2.8 11.6 0 18-9.6 18-18 0-.3 0-.5 0-.8.9-.6 2-1.5 2.8-2.4z"/></svg>
+                </a>
+              </div>
+            </div>
           </div>
-        </article>
-      </main>
+        </main>
 
+      </div>
+
+      {/* Place Footer outside the centered max-width container so it spans full width */}
       <Footer />
-      <ScrollToTop />
     </div>
   );
 }
