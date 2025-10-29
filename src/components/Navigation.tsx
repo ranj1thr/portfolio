@@ -9,6 +9,7 @@ const navItems = [
   { id: 'projects', label: 'Projects' },
   { id: 'experience', label: 'Experience' },
   { id: 'storkstone', label: 'STORKSTONE' },
+  { id: 'blog', label: 'Blog' },
   { id: 'contact', label: 'Contact' },
 ];
 
@@ -29,6 +30,12 @@ export function Navigation() {
   }, []);
 
   const scrollToSection = (sectionId: string) => {
+    // If Blog is a separate page, navigate to that route
+    if (sectionId === 'blog') {
+      navigate('/blog/the-story-behind-storkstone');
+      setIsMobileMenuOpen(false);
+      return;
+    }
     // If Storkstone is a separate page, navigate to that route
     if (sectionId === 'storkstone') {
       // If already on storkstone route, scroll to id if present
@@ -82,28 +89,26 @@ export function Navigation() {
           </button>
 
           <div className="hidden md:flex space-x-8">
-            {navItems.map((item) => (
-              <button
-                key={item.id}
-                onClick={() => scrollToSection(item.id)}
-                className={`text-sm font-medium transition-colors relative group ${
-                  isScrolled ? 'text-slate-700' : 'text-white/90'
-                } ${
-                  activeSection === item.id
-                    ? isScrolled
-                      ? 'text-blue-600'
-                      : 'text-white'
-                    : ''
-                } hover:${isScrolled ? 'text-blue-600' : 'text-white'}`}
-              >
-                {item.label}
-                <span
-                  className={`absolute -bottom-1 left-0 h-0.5 bg-current transition-all ${
-                    activeSection === item.id ? 'w-full' : 'w-0 group-hover:w-full'
-                  }`}
-                />
-              </button>
-            ))}
+            {navItems.map((item) => {
+              const isRouteActive = location.pathname.startsWith('/blog') && item.id === 'blog';
+              const isActive = activeSection === item.id || isRouteActive;
+              return (
+                <button
+                  key={item.id}
+                  onClick={() => scrollToSection(item.id)}
+                  className={`text-sm font-medium transition-colors relative group ${
+                    isScrolled ? 'text-slate-700' : 'text-white/90'
+                  } ${isActive ? (isScrolled ? 'text-blue-600' : 'text-white') : ''} hover:${isScrolled ? 'text-blue-600' : 'text-white'}`}
+                >
+                  {item.label}
+                  <span
+                    className={`absolute -bottom-1 left-0 h-0.5 bg-current transition-all ${
+                      isActive ? 'w-full' : 'w-0 group-hover:w-full'
+                    }`}
+                  />
+                </button>
+              );
+            })}
           </div>
 
           <button
@@ -120,19 +125,21 @@ export function Navigation() {
       {isMobileMenuOpen && (
         <div className="md:hidden bg-white shadow-lg">
           <div className="px-4 py-6 space-y-4">
-            {navItems.map((item) => (
-              <button
-                key={item.id}
-                onClick={() => scrollToSection(item.id)}
-                className={`block w-full text-left px-4 py-2 rounded-md text-base font-medium transition-colors ${
-                  activeSection === item.id
-                    ? 'bg-blue-50 text-blue-600'
-                    : 'text-slate-700 hover:bg-slate-50'
-                }`}
-              >
-                {item.label}
-              </button>
-            ))}
+            {navItems.map((item) => {
+              const isRouteActive = location.pathname.startsWith('/blog') && item.id === 'blog';
+              const isActive = activeSection === item.id || isRouteActive;
+              return (
+                <button
+                  key={item.id}
+                  onClick={() => scrollToSection(item.id)}
+                  className={`block w-full text-left px-4 py-2 rounded-md text-base font-medium transition-colors ${
+                    isActive ? 'bg-blue-50 text-blue-600' : 'text-slate-700 hover:bg-slate-50'
+                  }`}
+                >
+                  {item.label}
+                </button>
+              );
+            })}
           </div>
         </div>
       )}
