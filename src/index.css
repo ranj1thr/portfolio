@@ -46,4 +46,29 @@
     -webkit-box-orient: vertical;
     overflow: hidden;
   }
+
+  /* Blog-specific prose styling */
+  .prose-blog p,
+  .prose-blog li {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.05rem;
+    line-height: 1.8;
+    margin-bottom: 1.5em;
+  }
+
+  .prose-blog h1,
+  .prose-blog h2,
+  .prose-blog h3,
+  .prose-blog h4,
+  .prose-blog h5,
+  .prose-blog h6 {
+    font-family: 'Montserrat Alternates', sans-serif;
+    font-weight: 700;
+  }
+
+  .grid-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
 }
