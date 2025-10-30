@@ -9,7 +9,7 @@ import { Contact } from '../components/Contact';
 import { Footer } from '../components/Footer';
 import { ScrollToTop } from '../components/ScrollToTop';
 
-export default function Home() {
+export function Home() {
   return (
     <div>
       <Navigation />

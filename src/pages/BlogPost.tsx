@@ -3,7 +3,7 @@ import { Helmet } from 'react-helmet-async';
 import { Navigation } from '../components/Navigation';
 import { Footer } from '../components/Footer';
 
-export default function BlogPost() {
+export function BlogPost() {
   return (
     <div className="bg-bg-light dark:bg-bg-dark font-body text-text-light dark:text-text-dark min-h-screen flex flex-col">
       <Helmet>
