@@ -1,10 +1,36 @@
 // src/pages/BlogPost.tsx
+import { Helmet } from 'react-helmet-async';
 import { Navigation } from '../components/Navigation';
 import { Footer } from '../components/Footer';
 
 export default function BlogPost() {
   return (
     <div className="bg-bg-light dark:bg-bg-dark font-body text-text-light dark:text-text-dark min-h-screen flex flex-col">
+      <Helmet>
+        <title>The Story Behind STORKSTONE — Minimal Luxury in 92.5 Silver</title>
+        <meta
+          name="description"
+          content="The origin story of STORKSTONE: crafting minimal, meaningful luxury with 92.5 sterling silver jewelry and premium scented candles."
+        />
+        <link
+          rel="canonical"
+          href="https://www.ranjithr.dev/blog/the-story-behind-storkstone"
+        />
+
+        {/* Open Graph */}
+        <meta property="og:type" content="article" />
+        <meta property="og:url" content="https://www.ranjithr.dev/blog/the-story-behind-storkstone" />
+        <meta property="og:title" content="The Story Behind STORKSTONE — Minimal Luxury in 92.5 Silver" />
+        <meta property="og:description" content="The origin story of STORKSTONE: crafting minimal, meaningful luxury with 92.5 sterling silver jewelry and premium scented candles." />
+        <meta property="og:image" content="https://lh3.googleusercontent.com/aida-public/AB6AXuDN3yWckrkJlkqKfq0YnSW3uwPRpQucssYGaIjFECi89ydgq3_zeXfLJkXl4nlZcnYapAlG4tkrsKvVov8PlLf9C1I5PII-k8mKDZ_m4KrKL1ks_Q-yFZNKWUfw8XedUSCu8wogDEGQfBdqqZ563UqxDuTzpG94WAe3cp1kYavgO_gHt172aorczVviDOf5nI6-FgNrHbaYMOghxCAmwB0XnFNyh2_qWu4jC0vepOwogA2oFcb-WVovK4Ccqve-DQXT8WXCOil9jv4" />
+        <meta property="og:site_name" content="Ranjith R — Portfolio" />
+
+        {/* Twitter */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="The Story Behind STORKSTONE — Minimal Luxury in 92.5 Silver" />
+        <meta name="twitter:description" content="The origin story of STORKSTONE: crafting minimal, meaningful luxury with 92.5 sterling silver jewelry and premium scented candles." />
+        <meta name="twitter:image" content="https://lh3.googleusercontent.com/aida-public/AB6AXuDN3yWckrkJlkqKfq0YnSW3uwPRpQucssYGaIjFECi89ydgq3_zeXfLJkXl4nlZcnYapAlG4tkrsKvVov8PlLf9C1I5PII-k8mKDZ_m4KrKL1ks_Q-yFZNKWUfw8XedUSCu8wogDEGQfBdqqZ563UqxDuTzpG94WAe3cp1kYavgO_gHt172aorczVviDOf5nI6-FgNrHbaYMOghxCAmwB0XnFNyh2_qWu4jC0vepOwogA2oFcb-WVovK4Ccqve-DQXT8WXCOil9jv4" />
+      </Helmet>
       {/* Use site Navigation component (fixed) */}
       <Navigation />
 
