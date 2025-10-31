@@ -36,7 +36,7 @@ export function Navigation() {
   const scrollToSection = (sectionId: string) => {
     // If Blog is a separate page, navigate to that route
     if (sectionId === 'blog') {
-      navigate('/blog/the-story-behind-storkstone');
+      navigate('/blog');
       setIsMobileMenuOpen(false);
       return;
     }
