@@ -38,9 +38,9 @@ export function BlogPost() {
         <div className="max-w-7xl mx-auto">
           {/* Hero Section */}
           <div className="text-center mb-16 sm:mb-24">
-            <p className="text-gold font-heading font-medium text-sm tracking-widest uppercase mb-3">Our Journey</p>
+            <p className="text-blue-600 font-heading font-medium text-sm tracking-widest uppercase mb-3">Our Journey</p>
             <h1 className="text-text-light dark:text-text-dark font-heading tracking-tight text-5xl sm:text-6xl lg:text-7xl font-bold leading-tight">
-              The Story Behind <span className="text-gold">STORKSTONE</span>
+              The Story Behind <span className="text-blue-600">STORKSTONE</span>
             </h1>
             <p className="text-xl sm:text-2xl text-slate-600 dark:text-slate-400 font-light text-center pb-2 mt-6">
               Crafting Minimal Luxury for Everyday Wear
@@ -94,7 +94,7 @@ export function BlogPost() {
             </div>
 
             {/* Quote Block */}
-            <blockquote className="md:col-span-2 lg:col-span-2 border-l-4 border-gold bg-secondary-light/70 dark:bg-secondary-dark/70 text-text-light dark:text-text-dark rounded-r-xl px-6 py-5 my-0 not-italic self-center shadow-md">
+            <blockquote className="md:col-span-2 lg:col-span-2 border-l-4 border-blue-600 bg-blue-50 dark:bg-slate-800 text-text-light dark:text-text-dark rounded-r-xl px-6 py-5 my-0 not-italic self-center shadow-md">
               <p className="text-xl sm:text-2xl font-heading leading-relaxed font-medium">
                 "Luxury should be personal. And that's what STORKSTONE stands for — minimal, meaningful, and made to last."
               </p>
@@ -169,7 +169,7 @@ export function BlogPost() {
                 This is our story, and it's only just beginning.
               </p>
               <p className="text-center text-slate-600 dark:text-slate-400 italic mt-8">
-                Explore our world at <a href="https://storkstone.com" target="_blank" rel="noopener noreferrer" className="text-gold hover:text-gold/80 underline">storkstone.com</a>
+                Explore our world at <a href="https://storkstone.com" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:text-blue-700 underline">storkstone.com</a>
               </p>
             </div>
           </div>
@@ -177,11 +177,11 @@ export function BlogPost() {
       </main>
 
       {/* Fixed Bottom CTA Bar */}
-      <div className="fixed bottom-0 left-0 right-0 z-40 bg-secondary-light/95 dark:bg-secondary-dark/95 backdrop-blur-sm py-4 px-6 shadow-2xl flex justify-center items-center">
+      <div className="fixed bottom-0 left-0 right-0 z-40 bg-white/95 dark:bg-slate-900/95 backdrop-blur-sm py-4 px-6 shadow-2xl flex justify-center items-center border-t border-slate-200 dark:border-slate-700">
         <div className="max-w-7xl w-full flex flex-col sm:flex-row items-center justify-between gap-4">
           <p className="text-text-light dark:text-text-dark font-heading text-lg font-semibold tracking-wide">Find a piece that tells your story.</p>
           <a
-            className="px-8 py-2.5 rounded-lg bg-gold text-white text-base font-heading font-bold tracking-wide hover:opacity-90 transition-opacity whitespace-nowrap"
+            className="px-8 py-2.5 rounded-lg bg-blue-600 text-white text-base font-heading font-bold tracking-wide hover:bg-blue-700 transition-colors whitespace-nowrap"
             href="https://storkstone.com"
             target="_blank"
             rel="noopener noreferrer"

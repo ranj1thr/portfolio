@@ -114,7 +114,7 @@ export function BlogList() {
                 type="text"
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
-                className="flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg text-text-light dark:text-text-dark focus:outline-0 focus:ring-0 border-none bg-white dark:bg-gray-800 focus:border-none h-full placeholder:text-text-muted-light dark:placeholder:text-gray-400 px-4 lg:px-6 rounded-l-none border-l-0 pl-2 text-base lg:text-lg font-normal leading-normal"
+                className="flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg text-text-light dark:text-text-dark focus:outline-0 focus:ring-2 focus:ring-blue-600 focus:border-transparent border border-slate-300 dark:border-gray-700 bg-white dark:bg-gray-800 h-full placeholder:text-text-muted-light dark:placeholder:text-gray-400 px-4 lg:px-6 rounded-l-none border-l-0 pl-2 text-base lg:text-lg font-normal leading-normal transition-all"
                 placeholder="Search articles"
               />
             </div>
