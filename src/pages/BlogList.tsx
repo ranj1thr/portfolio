@@ -86,7 +86,7 @@ export function BlogList() {
           name="description"
           content="Explore articles about jewelry care, styling tips, candle scents, and behind-the-scenes stories from STORKSTONE."
         />
-        <link rel="canonical" href="https://www.ranjithr.dev/blog" />
+        <link rel="canonical" href="https://ranjithr.dev/blog" />
       </Helmet>
 
       {/* Main Navigation */}

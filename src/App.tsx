@@ -2,7 +2,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { HelmetProvider } from 'react-helmet-async';
 import { Home } from './pages/Home';
 import { StorkstonePage } from './pages/StorkstonePage';
-import { BlogPost } from './pages/BlogPost';
+import { TheStoryBehindStorkstone } from './pages/TheStoryBehindStorkstone';
 import { BlogList } from './pages/BlogList';
 
 function App() {
@@ -13,7 +13,7 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/storkstone" element={<StorkstonePage />} />
           <Route path="/blog" element={<BlogList />} />
-          <Route path="/blog/the-story-behind-storkstone" element={<BlogPost />} />
+          <Route path="/blog/the-story-behind-storkstone" element={<TheStoryBehindStorkstone />} />
         </Routes>
       </BrowserRouter>
     </HelmetProvider>
