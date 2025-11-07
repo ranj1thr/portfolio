@@ -11,6 +11,11 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Home />} />
+          {/* Section-friendly routes mapping to Home */}
+          <Route path="/about" element={<Home />} />
+          <Route path="/projects" element={<Home />} />
+          <Route path="/experience" element={<Home />} />
+          <Route path="/contact" element={<Home />} />
           <Route path="/storkstone" element={<StorkstonePage />} />
           <Route path="/blog" element={<BlogList />} />
           <Route path="/blog/the-story-behind-storkstone" element={<TheStoryBehindStorkstone />} />
