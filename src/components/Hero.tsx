@@ -1,4 +1,6 @@
-import { ArrowDown, Github, Linkedin, Mail, X, } from 'lucide-react';
+import { ArrowDown, Github, Linkedin, Mail } from 'lucide-react';
+import MediumIcon from './icons/Medium';
+import XIcon from './icons/XIcon';
 
 export function Hero() {
   const scrollToSection = (sectionId: string) => {
@@ -67,6 +69,15 @@ export function Hero() {
               <Github size={24} />
             </a>
             <a
+              href="https://medium.com/@ranjithhr"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="p-3 bg-white/10 hover:bg-white/20 backdrop-blur-sm rounded-full transition-all duration-200 hover:scale-110"
+              aria-label="Medium"
+            >
+              <MediumIcon size={24} variant="circle" />
+            </a>
+            <a
               href="https://www.linkedin.com/in/ranj1thr/"
               target="_blank"
               rel="noopener noreferrer"
@@ -80,9 +91,9 @@ export function Hero() {
               target="_blank"
               rel="noopener noreferrer"
               className="p-3 bg-white/10 hover:bg-white/20 backdrop-blur-sm rounded-full transition-all duration-200 hover:scale-110"
-              aria-label="Twitter"
+              aria-label="X (Twitter)"
             >
-              <X size={24} />
+              <XIcon size={24} variant="circle" />
             </a>
             <a
               href="mailto:ranjithtweaks@gmail.com"

@@ -1,9 +1,9 @@
-// src/pages/BlogPost.tsx
+// src/pages/TheStoryBehindStorkstone.tsx
 import { Helmet } from 'react-helmet-async';
 import { Navigation } from '../components/Navigation';
 import { Footer } from '../components/Footer';
 
-export function BlogPost() {
+export function TheStoryBehindStorkstone() {
   return (
     <div className="bg-bg-light dark:bg-bg-dark font-body text-text-light dark:text-text-dark min-h-screen flex flex-col">
       <Helmet>
@@ -14,22 +14,63 @@ export function BlogPost() {
         />
         <link
           rel="canonical"
-          href="https://www.ranjithr.dev/blog/the-story-behind-storkstone"
+          href="https://ranjithr.dev/blog/the-story-behind-storkstone"
         />
 
         {/* Open Graph */}
         <meta property="og:type" content="article" />
-        <meta property="og:url" content="https://www.ranjithr.dev/blog/the-story-behind-storkstone" />
+        <meta property="og:url" content="https://ranjithr.dev/blog/the-story-behind-storkstone" />
         <meta property="og:title" content="The Story Behind STORKSTONE — Minimal Luxury in 92.5 Silver" />
         <meta property="og:description" content="The origin story of STORKSTONE: crafting minimal, meaningful luxury with 92.5 sterling silver jewelry and premium scented candles." />
         <meta property="og:image" content="https://lh3.googleusercontent.com/aida-public/AB6AXuDN3yWckrkJlkqKfq0YnSW3uwPRpQucssYGaIjFECi89ydgq3_zeXfLJkXl4nlZcnYapAlG4tkrsKvVov8PlLf9C1I5PII-k8mKDZ_m4KrKL1ks_Q-yFZNKWUfw8XedUSCu8wogDEGQfBdqqZ563UqxDuTzpG94WAe3cp1kYavgO_gHt172aorczVviDOf5nI6-FgNrHbaYMOghxCAmwB0XnFNyh2_qWu4jC0vepOwogA2oFcb-WVovK4Ccqve-DQXT8WXCOil9jv4" />
         <meta property="og:site_name" content="Ranjith R — Portfolio" />
+        <meta property="article:published_time" content="2024-10-26T00:00:00Z" />
+        <meta property="article:modified_time" content="2025-10-30T00:00:00Z" />
+        <meta property="article:author" content="Ranjith R" />
+        <meta property="article:section" content="Behind the Scenes" />
+        <meta property="article:tag" content="STORKSTONE" />
+        <meta property="article:tag" content="jewelry" />
+        <meta property="article:tag" content="entrepreneurship" />
 
         {/* Twitter */}
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="The Story Behind STORKSTONE — Minimal Luxury in 92.5 Silver" />
         <meta name="twitter:description" content="The origin story of STORKSTONE: crafting minimal, meaningful luxury with 92.5 sterling silver jewelry and premium scented candles." />
         <meta name="twitter:image" content="https://lh3.googleusercontent.com/aida-public/AB6AXuDN3yWckrkJlkqKfq0YnSW3uwPRpQucssYGaIjFECi89ydgq3_zeXfLJkXl4nlZcnYapAlG4tkrsKvVov8PlLf9C1I5PII-k8mKDZ_m4KrKL1ks_Q-yFZNKWUfw8XedUSCu8wogDEGQfBdqqZ563UqxDuTzpG94WAe3cp1kYavgO_gHt172aorczVviDOf5nI6-FgNrHbaYMOghxCAmwB0XnFNyh2_qWu4jC0vepOwogA2oFcb-WVovK4Ccqve-DQXT8WXCOil9jv4" />
+        
+        <meta name="robots" content="index, follow" />
+        
+        {/* Article Structured Data */}
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Article",
+            "headline": "The Story Behind STORKSTONE — Minimal Luxury in 92.5 Silver",
+            "description": "The origin story of STORKSTONE: crafting minimal, meaningful luxury with 92.5 sterling silver jewelry and premium scented candles.",
+            "image": "https://lh3.googleusercontent.com/aida-public/AB6AXuDN3yWckrkJlkqKfq0YnSW3uwPRpQucssYGaIjFECi89ydgq3_zeXfLJkXl4nlZcnYapAlG4tkrsKvVov8PlLf9C1I5PII-k8mKDZ_m4KrKL1ks_Q-yFZNKWUfw8XedUSCu8wogDEGQfBdqqZ563UqxDuTzpG94WAe3cp1kYavgO_gHt172aorczVviDOf5nI6-FgNrHbaYMOghxCAmwB0XnFNyh2_qWu4jC0vepOwogA2oFcb-WVovK4Ccqve-DQXT8WXCOil9jv4",
+            "author": {
+              "@type": "Person",
+              "name": "Ranjith R",
+              "url": "https://ranjithr.dev/"
+            },
+            "publisher": {
+              "@type": "Organization",
+              "name": "Sourcebit Innovations Pvt Ltd",
+              "logo": {
+                "@type": "ImageObject",
+                "url": "https://ranjithr.dev/favicon.ico"
+              }
+            },
+            "datePublished": "2024-10-26",
+            "dateModified": "2025-10-30",
+            "mainEntityOfPage": {
+              "@type": "WebPage",
+              "@id": "https://ranjithr.dev/blog/the-story-behind-storkstone"
+            },
+            "articleSection": "Behind the Scenes",
+            "keywords": ["STORKSTONE", "jewelry", "entrepreneurship", "92.5 silver", "D2C brand", "startup story"]
+          })}
+        </script>
       </Helmet>
       {/* Use site Navigation component (fixed) */}
       <Navigation />

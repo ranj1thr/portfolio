@@ -1,7 +1,9 @@
 import { useState, useRef } from 'react';
-import { Send, Mail, Github, Linkedin, X, MapPin, CheckCircle } from 'lucide-react';
+import { Send, Mail, Github, Linkedin, MapPin, CheckCircle } from 'lucide-react';
+import MediumIcon from './icons/Medium';
 import { supabase, type ContactSubmission } from '../lib/supabase';
 import { useIntersectionObserver } from '../hooks/useIntersectionObserver';
+import XIcon from './icons/XIcon';
 
 export function Contact() {
   const [formData, setFormData] = useState<ContactSubmission>({
@@ -140,6 +142,15 @@ export function Contact() {
                     <Github size={24} />
                   </a>
                   <a
+                    href="https://medium.com/@ranjithhr"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="p-3 bg-slate-100 hover:bg-blue-600 text-slate-700 hover:text-white rounded-lg transition-all duration-200 hover:scale-110"
+                    aria-label="Medium"
+                  >
+                    <MediumIcon size={24} variant="circle" />
+                  </a>
+                  <a
                     href="https://www.linkedin.com/in/ranj1thr/"
                     target="_blank"
                     rel="noopener noreferrer"
@@ -155,7 +166,7 @@ export function Contact() {
                     className="p-3 bg-slate-100 hover:bg-blue-600 text-slate-700 hover:text-white rounded-lg transition-all duration-200 hover:scale-110"
                     aria-label="X (Twitter)"
                   >
-                    <X size={24} />
+                    <XIcon size={24} variant="circle" />
                   </a>
                 </div>
               </div>

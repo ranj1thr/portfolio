@@ -22,3 +22,7 @@ dist-ssr
 *.sw?
 .env
 .en.local
+
+# Lighthouse reports
+.lighthouse/
+.lighthouseci/
